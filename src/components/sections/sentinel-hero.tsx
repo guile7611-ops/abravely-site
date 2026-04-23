@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { waLink } from "@/lib/whatsapp";
 
@@ -94,14 +95,12 @@ export function SentinelHero() {
           >
             Falar com Especialista
           </a>
-          <a
-            href={waLink("Olá! Gostaria de contar sobre os gargalos tecnológicos do meu negócio.")}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/gargalos"
             className="inline-flex items-center justify-center h-14 px-10 rounded-full font-semibold text-base transition-all hover:scale-[1.03] active:scale-100 bg-[var(--surface)] text-foreground border border-[var(--border)] hover:bg-[var(--border)] pointer-events-auto"
           >
             Conte seus gargalos
-          </a>
+          </Link>
         </motion.div>
 
         <motion.p

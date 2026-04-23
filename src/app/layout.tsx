@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Sora } from "next/font/google";
+import { FloatingWhatsApp } from "@/components/ui/floating-whatsapp";
 import "./globals.css";
 
 const sora = Sora({
@@ -11,8 +12,12 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "SENTINEL AI",
-  description: "Enterprise security systems built in days.",
+  title: "Abravely",
+  description: "Software sob medida & IA aplicada. Sistemas e infraestrutura de alta performance para o seu negócio escalar.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -53,6 +58,7 @@ export default function RootLayout({
           />
         </noscript>
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );

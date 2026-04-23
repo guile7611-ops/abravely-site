@@ -7,12 +7,7 @@ export function ProblemSection() {
   return (
     <section id="problema" className="py-24 md:py-40 bg-[var(--color-hero-bg)] text-foreground relative overflow-hidden">
       {/* Sweep Glow */}
-      <div
-        className="pointer-events-none absolute -inset-[100%] opacity-20 animate-sweep"
-        style={{
-          background: "radial-gradient(circle 600px at 50% 50%, var(--primary), transparent 40%)",
-        }}
-      />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[0] animate-sweep" />
       <div className="container relative z-10 mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           

@@ -45,8 +45,6 @@ export function SentinelNavbar() {
     { label: "Especialidades", href: "/#especialidades" },
     { label: "Roadmap", href: "/#features" },
     { label: "Planos", href: "/#pricing" },
-    { label: "Cases", href: "/#cases" },
-    { label: "Problema", href: "/#problema" },
     { label: "Gargalos", href: "/gargalos" },
   ];
   return (
