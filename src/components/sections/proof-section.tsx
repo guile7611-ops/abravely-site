@@ -17,15 +17,16 @@ function CircuitNode({
       style={{
         left: x, top: y, width: size, height: size,
         background: "var(--accent-brand)",
+        willChange: "opacity, transform",
       }}
       animate={{
-        opacity: isLight ? [0.25, 0.9, 0.25] : [0.15, 0.8, 0.15],
-        scale: [1, 1.6, 1],
+        opacity: isLight ? [0.25, 0.7, 0.25] : [0.15, 0.6, 0.15],
       }}
-      transition={{ duration: 3, repeat: Infinity, delay, ease: "easeInOut" }}
+      transition={{ duration: 4, repeat: Infinity, delay, ease: "linear" }}
     />
   );
 }
+
 
 /* ── Grade de circuito (SVG inline) ─────────────────────────────── */
 function CircuitGrid({ isLight }: { isLight: boolean }) {
@@ -101,7 +102,10 @@ export function ProofSection() {
       className="relative py-24 md:py-40 overflow-hidden bg-[var(--color-hero-bg)] text-foreground"
     >
       {/* Background Animated Green Light like SentinelHero */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[0] animate-sweep" />
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[0] animate-sweep" 
+        style={{ willChange: "transform, opacity" }}
+      />
 
       {/* ── Textura tecnológica ── */}
 
@@ -110,8 +114,8 @@ export function ProofSection() {
         <CircuitGrid isLight={isLight} />
       </div>
 
-      {/* Nós de circuito animados */}
-      <div className="z-[1] absolute inset-0 pointer-events-none">
+      {/* Nós de circuito animados - Ocultos no mobile para performance */}
+      <div className="z-[1] absolute inset-0 pointer-events-none hidden md:block">
         {DATA_PARTICLES.map((p, i) => (
           <CircuitNode
             key={i}

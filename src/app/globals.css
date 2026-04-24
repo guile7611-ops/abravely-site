@@ -29,12 +29,10 @@
     0% {
       opacity: 0;
       transform: translateY(20px);
-      filter: blur(4px);
     }
     100% {
       opacity: 1;
       transform: translateY(0);
-      filter: blur(0);
     }
   }
 
@@ -47,30 +45,31 @@
     }
   }
 
-  --animate-sweep: sweep 15s ease-in-out infinite;
+  --animate-sweep: sweep 20s ease-in-out infinite;
 
   @keyframes sweep {
     0% {
-      transform: translate(-30%, -20%) scale(1);
+      transform: translate3d(-30%, -20%, 0) scale(1);
       opacity: 0.2;
     }
     25% {
-      transform: translate(30%, 20%) scale(1.2);
+      transform: translate3d(30%, 20%, 0) scale(1.1);
       opacity: 0.4;
     }
     50% {
-      transform: translate(-10%, 10%) scale(0.8);
+      transform: translate3d(-10%, 10%, 0) scale(0.9);
       opacity: 0.2;
     }
     75% {
-      transform: translate(20%, -10%) scale(1.1);
+      transform: translate3d(20%, -10%, 0) scale(1.05);
       opacity: 0.5;
     }
     100% {
-      transform: translate(-30%, -20%) scale(1);
+      transform: translate3d(-30%, -20%, 0) scale(1);
       opacity: 0.2;
     }
   }
+
 }
 
 :root, .dark {

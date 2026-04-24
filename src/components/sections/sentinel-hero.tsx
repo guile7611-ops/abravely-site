@@ -1,18 +1,13 @@
 "use client";
 
 import React, { useRef } from "react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { waLink } from "@/lib/whatsapp";
 
-const Spline = dynamic(() => import("@splinetool/react-spline"), {
-  ssr: false,
-  loading: () => <div className="absolute inset-0 bg-[var(--color-hero-bg)]" />,
-});
-
 export function SentinelHero() {
   const splineWrapperRef = useRef<HTMLDivElement>(null);
+
 
   // Framer motion variants for smooth staggered text entrance
   const containerVariants = {
@@ -27,30 +22,37 @@ export function SentinelHero() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      filter: "blur(0px)",
       transition: {
-        duration: 0.8,
-        ease: [0.16, 1, 0.3, 1], // Custom cubic-bezier for a smooth, elegant feel
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1],
       },
     },
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-[var(--color-hero-bg)] overflow-hidden">
-      {/* Background Animated Green Light (using CSS animation for compositor-thread performance) */}
-      <div className="absolute w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[0] animate-sweep" />
+      {/* Background Animated Green Light */}
+      <div 
+        className="absolute w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[0] animate-sweep" 
+        style={{ willChange: "transform, opacity" }}
+      />
 
-      {/* Spline 3D Background */}
+      {/* Static 3D Background - High Performance for all devices */}
       <div className="absolute inset-0 pointer-events-none" ref={splineWrapperRef}>
-        <Spline
-          scene="https://prod.spline.design/Slk6b8kz3LRlKiyk/scene.splinecode"
-          className="w-full h-full opacity-80"
-        />
+        <div className="relative w-full h-full opacity-60">
+          <img
+            src="/spline-static.png"
+            alt="Abravely 3D Background"
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
+
+
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40 z-[1] pointer-events-none" />
@@ -101,6 +103,8 @@ export function SentinelHero() {
           >
             Conte seus gargalos
           </Link>
+
+
         </motion.div>
 
         <motion.p

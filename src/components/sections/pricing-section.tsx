@@ -83,7 +83,10 @@ export function PricingSection() {
       id="pricing"
     >
       {/* Luz verde varrendo o fundo */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[0] animate-sweep" />
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[0] animate-sweep" 
+        style={{ willChange: "transform, opacity" }}
+      />
 
 
       <div className="container relative z-10 mx-auto px-6 max-w-6xl">

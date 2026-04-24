@@ -50,17 +50,17 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
-      duration: 0.8,
-      ease: [0.16, 1, 0.3, 1],
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };
+
 
 export function CapabilitiesSection() {
   return (
@@ -69,7 +69,10 @@ export function CapabilitiesSection() {
       className="relative py-32 md:py-48 overflow-hidden bg-[var(--color-hero-bg)] text-foreground"
     >
       {/* Background Animated Green Light like SentinelHero */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[0] animate-sweep" />
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[0] animate-sweep" 
+        style={{ willChange: "transform, opacity" }}
+      />
 
       <div className="container relative z-10 mx-auto px-6 max-w-7xl">
         {/* Header */}
@@ -120,7 +123,7 @@ export function CapabilitiesSection() {
             return (
               <motion.div key={idx} variants={itemVariants} className="group h-full">
                 <div
-                  className="relative h-full rounded-xl p-8 flex flex-col gap-6 transition-all duration-500 overflow-hidden bg-foreground/[0.02] border border-foreground/[0.08] hover:border-primary/40 hover:bg-foreground/[0.04] backdrop-blur-sm group-hover:-translate-y-2 hover:shadow-[0_0_30px_-15px_var(--primary)]"
+                  className="relative h-full rounded-xl p-6 md:p-8 flex flex-col gap-6 transition-all duration-300 overflow-hidden bg-foreground/[0.03] border border-foreground/[0.08] hover:border-primary/40 hover:bg-foreground/[0.04] backdrop-blur-sm md:group-hover:-translate-y-2 hover:shadow-[0_0_30px_-15px_var(--primary)]"
                 >
                   {/* Subtle hover gradient inside card */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

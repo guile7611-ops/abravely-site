@@ -1,13 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { waLink } from "@/lib/whatsapp";
 
 export function SuggestionSection() {
   return (
-    <section className="py-20 md:py-28 bg-[var(--color-hero-bg)] text-foreground relative overflow-hidden">
+    <section id="gargalos" className="py-20 md:py-28 bg-[var(--color-hero-bg)] text-foreground relative overflow-hidden">
+
       {/* Sweep Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[0] animate-sweep" />
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[0] animate-sweep" 
+        style={{ willChange: "transform, opacity" }}
+      />
       <div className="container relative z-10 mx-auto px-6 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
@@ -22,8 +27,10 @@ export function SuggestionSection() {
             className="pointer-events-none absolute -inset-[100%] opacity-20 animate-sweep"
             style={{
               background: "radial-gradient(circle 400px at 50% 50%, var(--primary), transparent 40%)",
+              willChange: "transform, opacity",
             }}
           />
+
 
           {/* Glows decorativos internos */}
           <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full blur-[120px] pointer-events-none bg-primary/20" />
@@ -48,16 +55,13 @@ export function SuggestionSection() {
             </p>
 
             {/* CTA */}
-            <a
-              href={waLink(
-                "Olá! Gostaria de receber uma sugestão sob medida da Abravely para resolver os gargalos da minha operação."
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/gargalos"
               className="inline-flex items-center justify-center h-14 px-10 rounded-full font-semibold text-base transition-all hover:scale-[1.03] active:scale-100 bg-primary text-primary-foreground shadow-[0_0_20px_var(--primary)]"
             >
               Receber Sugestão
-            </a>
+            </Link>
+
 
             {/* Footnote */}
             <p className="text-xs mt-6 text-[var(--foreground-faint)]">

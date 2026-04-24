@@ -8,11 +8,14 @@ export const GlassCard = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "card-glow-group rounded-3xl p-8 transition-all duration-500 relative",
-      "border border-white/5 bg-white/[0.02] backdrop-blur-xl",
+      "card-glow-group rounded-3xl p-6 md:p-8 transition-all duration-300 relative",
+      "border border-white/5 bg-white/[0.03] backdrop-blur-md",
       "hover:bg-white/[0.05] hover:border-white/10 hover:shadow-2xl",
       className
     )}
+
+
+
     style={{
       boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)"
     }}
