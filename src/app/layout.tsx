@@ -14,10 +14,6 @@ const sora = Sora({
 export const metadata: Metadata = {
   title: "Abravely",
   description: "Software sob medida & IA aplicada. Sistemas e infraestrutura de alta performance para o seu negócio escalar.",
-  icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
-  },
 };
 
 export default function RootLayout({
